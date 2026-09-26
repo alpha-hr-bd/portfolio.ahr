@@ -1,413 +1,306 @@
 /* =========================================================
-   ALPHA.HR — PORTFOLIO JAVASCRIPT
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    /* =========================
-       ELEMENTS
-    ========================= */
-
-    const body = document.body;
-    const themeToggle = document.getElementById("themeToggle");
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.querySelector(".nav-links");
-    const header = document.querySelector("header");
+   ALPHA.HR PORTFOLIO JS
+   ========================================================= */
 
 
-    /* =========================
-       DARK / LIGHT MODE
-    ========================= */
+/* YEAR */
 
-    const savedTheme = localStorage.getItem("alpha-theme");
+const year = document.getElementById("year");
 
-    if (savedTheme === "dark") {
-        body.classList.add("dark");
-
-        if (themeToggle) {
-            themeToggle.textContent = "☀";
-        }
-    }
-
-    if (themeToggle) {
-
-        themeToggle.addEventListener("click", () => {
-
-            body.classList.toggle("dark");
-
-            const isDark = body.classList.contains("dark");
-
-            localStorage.setItem(
-                "alpha-theme",
-                isDark ? "dark" : "light"
-            );
-
-            themeToggle.textContent =
-                isDark ? "☀" : "☾";
-
-        });
-
-    }
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
 
 
-    /* =========================
-       MOBILE MENU
-    ========================= */
+/* THEME */
 
-    if (menuToggle && navLinks) {
+const themeToggle = document.getElementById("themeToggle");
 
-        menuToggle.addEventListener("click", () => {
+const savedTheme = localStorage.getItem("alpha-theme");
 
-            navLinks.classList.toggle("active");
+if (savedTheme === "dark") {
+  document.body.classList.add("dark");
 
-            const opened =
-                navLinks.classList.contains("active");
+  if (themeToggle) {
+    themeToggle.textContent = "☀️";
+  }
+}
 
-            menuToggle.textContent =
-                opened ? "✕" : "☰";
+if (themeToggle) {
 
-        });
+  themeToggle.addEventListener("click", () => {
 
+    document.body.classList.toggle("dark");
 
-        /* Close menu after clicking link */
+    const isDark =
+      document.body.classList.contains("dark");
 
-        navLinks.querySelectorAll("a").forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                navLinks.classList.remove("active");
-
-                menuToggle.textContent = "☰";
-
-            });
-
-        });
-
-    }
-
-
-    /* =========================
-       NAVBAR SCROLL EFFECT
-    ========================= */
-
-    function handleScroll() {
-
-        if (!header) return;
-
-        if (window.scrollY > 30) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-
-    }
-
-    window.addEventListener(
-        "scroll",
-        handleScroll,
-        { passive: true }
+    localStorage.setItem(
+      "alpha-theme",
+      isDark ? "dark" : "light"
     );
 
-    handleScroll();
+    themeToggle.textContent =
+      isDark ? "☀️" : "🌙";
+
+  });
+
+}
 
 
-    /* =========================
-       SCROLL REVEAL
-    ========================= */
+/* MOBILE MENU */
 
-    const revealElements =
-        document.querySelectorAll(
-            ".section, .project-card, .service, .skill-card, .stat, .contact-box"
-        );
+const menuToggle =
+  document.getElementById("menuToggle");
 
-    revealElements.forEach(element => {
-        element.classList.add("reveal");
+const navMenu =
+  document.getElementById("navMenu");
+
+if (menuToggle && navMenu) {
+
+  menuToggle.addEventListener("click", () => {
+
+    navMenu.classList.toggle("open");
+
+    menuToggle.textContent =
+      navMenu.classList.contains("open")
+        ? "✕"
+        : "☰";
+
+  });
+
+}
+
+
+/* CLOSE MOBILE MENU */
+
+document.querySelectorAll(".nav-link")
+  .forEach(link => {
+
+    link.addEventListener("click", () => {
+
+      if (navMenu) {
+        navMenu.classList.remove("open");
+      }
+
+      if (menuToggle) {
+        menuToggle.textContent = "☰";
+      }
+
     });
 
+  });
 
-    const observer = new IntersectionObserver(
-        entries => {
 
-            entries.forEach(entry => {
+/* NAVBAR SCROLL */
 
-                if (entry.isIntersecting) {
+const navbar =
+  document.getElementById("navbar");
 
-                    entry.target.classList.add("show");
+window.addEventListener("scroll", () => {
 
-                    observer.unobserve(
-                        entry.target
-                    );
+  if (!navbar) return;
 
-                }
+  if (window.scrollY > 30) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
 
-            });
+});
 
-        },
-        {
-            threshold: 0.12
+
+/* REVEAL ANIMATION */
+
+const revealElements =
+  document.querySelectorAll(".reveal");
+
+const observer =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add("show");
+
+          observer.unobserve(entry.target);
+
         }
-    );
+
+      });
+
+    },
+    {
+      threshold: 0.12
+    }
+  );
 
 
-    revealElements.forEach(element => {
-        observer.observe(element);
-    });
+revealElements.forEach(element => {
+  observer.observe(element);
+});
 
 
-    /* =========================
-       ACTIVE NAV LINK
-    ========================= */
+/* ACTIVE NAV */
 
-    const sections =
-        document.querySelectorAll("main section[id]");
+const sections =
+  document.querySelectorAll("section[id]");
 
-    const navItems =
-        document.querySelectorAll(".nav-links a");
+const navLinks =
+  document.querySelectorAll(".nav-link");
 
-    function updateActiveNav() {
+window.addEventListener("scroll", () => {
 
-        let current = "";
+  let current = "";
 
-        sections.forEach(section => {
+  sections.forEach(section => {
 
-            const sectionTop =
-                section.offsetTop - 180;
+    const sectionTop =
+      section.offsetTop - 180;
 
-            if (window.scrollY >= sectionTop) {
-                current = section.id;
-            }
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
 
-        });
+  });
 
-        navItems.forEach(link => {
+  navLinks.forEach(link => {
 
-            link.style.color = "";
+    link.classList.remove("active");
 
-            const href =
-                link.getAttribute("href");
+    if (
+      link.getAttribute("href") ===
+      "#" + current
+    ) {
+      link.classList.add("active");
+    }
 
-            if (href === `#${current}`) {
-                link.style.color =
-                    "var(--primary)";
-            }
+  });
 
-        });
+});
+
+
+/* TYPING EFFECT */
+
+const typingText =
+  document.getElementById("typingText");
+
+const roles = [
+  "Developer • Creator • Entrepreneur",
+  "Web Developer • Builder",
+  "Digital Product Creator",
+  "Technology Enthusiast"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+
+function typeEffect() {
+
+  if (!typingText) return;
+
+  const currentRole =
+    roles[roleIndex];
+
+  if (!deleting) {
+
+    typingText.textContent =
+      currentRole.substring(
+        0,
+        charIndex + 1
+      );
+
+    charIndex++;
+
+    if (charIndex === currentRole.length) {
+
+      deleting = true;
+
+      setTimeout(typeEffect, 1700);
+
+      return;
+    }
+
+  } else {
+
+    typingText.textContent =
+      currentRole.substring(
+        0,
+        charIndex - 1
+      );
+
+    charIndex--;
+
+    if (charIndex === 0) {
+
+      deleting = false;
+
+      roleIndex =
+        (roleIndex + 1) % roles.length;
 
     }
 
-    window.addEventListener(
-        "scroll",
-        updateActiveNav,
-        { passive: true }
-    );
+  }
 
-    updateActiveNav();
+  setTimeout(
+    typeEffect,
+    deleting ? 45 : 75
+  );
 
+}
 
-    /* =========================
-       SMOOTH SCROLL
-    ========================= */
+typeEffect();
 
-    document.querySelectorAll(
-        'a[href^="#"]'
-    ).forEach(link => {
 
-        link.addEventListener("click", event => {
+/* PROJECT CARD TILT */
 
-            const targetID =
-                link.getAttribute("href");
+const projectCards =
+  document.querySelectorAll(".project-card");
 
-            if (
-                !targetID ||
-                targetID === "#"
-            ) return;
+projectCards.forEach(card => {
 
-            const target =
-                document.querySelector(targetID);
+  card.addEventListener("mousemove", event => {
 
-            if (!target) return;
+    if (window.innerWidth < 800) return;
 
-            event.preventDefault();
+    const rect =
+      card.getBoundingClientRect();
 
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
+    const x =
+      event.clientX - rect.left;
 
-        });
+    const y =
+      event.clientY - rect.top;
 
-    });
+    const centerX =
+      rect.width / 2;
 
+    const centerY =
+      rect.height / 2;
 
-    /* =========================
-       TYPING EFFECT
-    ========================= */
+    const rotateX =
+      ((y - centerY) / centerY) * -2;
 
-    const heroTitle =
-        document.querySelector(".hero h2");
+    const rotateY =
+      ((x - centerX) / centerX) * 2;
 
-    if (heroTitle) {
+    card.style.transform =
+      `perspective(700px)
+       rotateX(${rotateX}deg)
+       rotateY(${rotateY}deg)
+       translateY(-5px)`;
 
-        const words = [
-            "Developer • Creator • Entrepreneur",
-            "Web Developer • Builder",
-            "Digital Product Creator",
-            "Technology Enthusiast"
-        ];
+  });
 
-        let wordIndex = 0;
-        let charIndex = 0;
-        let deleting = false;
 
-        function typeEffect() {
+  card.addEventListener("mouseleave", () => {
 
-            const currentWord =
-                words[wordIndex];
+    card.style.transform = "";
 
-            if (!deleting) {
-
-                heroTitle.textContent =
-                    currentWord.substring(
-                        0,
-                        charIndex + 1
-                    );
-
-                charIndex++;
-
-                if (
-                    charIndex ===
-                    currentWord.length
-                ) {
-
-                    deleting = true;
-
-                    setTimeout(
-                        typeEffect,
-                        1600
-                    );
-
-                    return;
-                }
-
-            } else {
-
-                heroTitle.textContent =
-                    currentWord.substring(
-                        0,
-                        charIndex - 1
-                    );
-
-                charIndex--;
-
-                if (charIndex === 0) {
-
-                    deleting = false;
-
-                    wordIndex =
-                        (wordIndex + 1) %
-                        words.length;
-
-                }
-
-            }
-
-            setTimeout(
-                typeEffect,
-                deleting ? 35 : 65
-            );
-
-        }
-
-        typeEffect();
-
-    }
-
-
-    /* =========================
-       PROJECT CARD TILT
-    ========================= */
-
-    const cards =
-        document.querySelectorAll(
-            ".project-card"
-        );
-
-    cards.forEach(card => {
-
-        card.addEventListener(
-            "mousemove",
-            event => {
-
-                if (window.innerWidth < 850)
-                    return;
-
-                const rect =
-                    card.getBoundingClientRect();
-
-                const x =
-                    event.clientX -
-                    rect.left;
-
-                const y =
-                    event.clientY -
-                    rect.top;
-
-                const rotateX =
-                    ((y / rect.height) - .5) * -5;
-
-                const rotateY =
-                    ((x / rect.width) - .5) * 5;
-
-                card.style.transform =
-                    `perspective(700px)
-                     rotateX(${rotateX}deg)
-                     rotateY(${rotateY}deg)
-                     translateY(-8px)`;
-
-            }
-        );
-
-        card.addEventListener(
-            "mouseleave",
-            () => {
-
-                card.style.transform = "";
-
-            }
-        );
-
-    });
-
-
-    /* =========================
-       CURRENT YEAR
-    ========================= */
-
-    document.querySelectorAll(
-        "footer p"
-    ).forEach(p => {
-
-        if (
-            p.textContent.includes("2026")
-        ) {
-
-            p.textContent =
-                p.textContent.replace(
-                    "2026",
-                    new Date().getFullYear()
-                );
-
-        }
-
-    });
-
-
-    /* =========================
-       PAGE LOADED
-    ========================= */
-
-    document.body.classList.add(
-        "page-loaded"
-    );
+  });
 
 });
