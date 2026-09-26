@@ -1,360 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Alpha.HR — Developer • Creator • Entrepreneur</title>
+  <meta name="description" content="Alpha.HR — Developer, Creator and Entrepreneur building modern websites, web applications and digital products.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
 
-<header id="navbar">
-    <nav>
-        <a class="logo">Alpha<span>.HR</span></a>
+  <!-- Background -->
+  <div class="bg-glow glow-one"></div>
+  <div class="bg-glow glow-two"></div>
 
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+
+      <a href="#home" class="logo">
+        Alpha<span>.HR</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">
+          🌙
+        </button>
+
+        <button id="menuToggle" class="menu-btn" aria-label="Open menu">
+          ☰
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero section" id="home">
+
+      <div class="hero-content reveal">
+
+        <div class="availability">
+          <span class="status-dot"></span>
+          Available for Projects
         </div>
 
-        <button id="themeToggle">☾</button>
-        <button id="menuToggle">☰</button>
-    </nav>
-</header>
-
-
-<main>
-
-<section id="home" class="hero">
-
-    <div class="hero-content">
-
-        <span class="badge">
-            Available for Projects
-        </span>
+        <p class="eyebrow">HELLO, I'M</p>
 
         <h1>
-            Hi, I'm <span>Alpha.HR</span>
+          Alpha<span>.HR</span>
         </h1>
 
         <h2>
-            Developer • Creator • Entrepreneur
+          <span id="typingText">Developer • Creator • Entrepreneur</span>
         </h2>
 
-        <p>
-            I build modern websites, useful web applications
-            and digital products.
+        <p class="hero-description">
+          I build modern websites, useful web applications and digital
+          products with clean design and practical technology.
         </p>
 
         <div class="hero-buttons">
-            <a href="#projects" class="btn primary">
-                View Projects
-            </a>
 
-            <a href="#contact" class="btn secondary">
-                Contact Me
-            </a>
+          <a href="#projects" class="btn primary-btn">
+            View My Work
+            <span>↗</span>
+          </a>
+
+          <a href="#contact" class="btn secondary-btn">
+            Contact Me
+          </a>
+
         </div>
 
-        <div class="socials">
-            <a href="#">GitHub</a>
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
+        <div class="social-links">
+
+          <a
+            href="https://github.com/alpha-hr-bd"
+            target="_blank"
+            rel="noopener"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="mailto:cmdsfun@gmail.com"
+          >
+            Gmail
+          </a>
+
         </div>
 
-    </div>
+      </div>
 
-    <div class="hero-visual">
+
+      <!-- HERO CARD -->
+      <div class="hero-visual reveal">
+
         <div class="profile-card">
-            <img src="assets/profile.jpg" alt="Alpha.HR">
+
+          <div class="profile-top">
+            <span class="profile-dot"></span>
+            <span>ALPHA.HR</span>
+          </div>
+
+          <div class="profile-avatar">
+            A<span>HR</span>
+          </div>
+
+          <h3>Building Digital Ideas</h3>
+
+          <p>
+            Websites • Web Apps • Digital Products
+          </p>
+
+          <div class="profile-line"></div>
+
+          <div class="mini-stats">
+
+            <div>
+              <strong>10+</strong>
+              <span>Projects</span>
+            </div>
+
+            <div>
+              <strong>24/7</strong>
+              <span>Ideas</span>
+            </div>
+
+            <div>
+              <strong>∞</strong>
+              <span>Learning</span>
+            </div>
+
+          </div>
+
         </div>
-    </div>
 
-</section>
+      </div>
+
+    </section>
 
 
-<section id="about" class="section">
+    <!-- ABOUT -->
+    <section class="section" id="about">
 
-    <div class="section-heading">
-        <span>01</span>
-        <h2>About Me</h2>
-    </div>
+      <div class="section-heading reveal">
+        <p class="section-label">ABOUT ME</p>
+        <h2>Turning ideas into <span>digital reality.</span></h2>
+        <p>
+          I enjoy creating websites, software and digital products
+          that are simple, useful and visually modern.
+        </p>
+      </div>
 
-    <div class="about-grid">
+      <div class="about-grid">
+
+        <div class="about-text reveal">
+
+          <p>
+            I'm <strong>Alpha.HR</strong>, a developer and digital creator
+            interested in web development, technology and building my own
+            digital products.
+          </p>
+
+          <p>
+            From educational platforms to management systems and creative
+            web applications, I like turning ideas into working projects.
+          </p>
+
+          <p>
+            My goal is simple — keep learning, keep building and create
+            something useful.
+          </p>
+
+        </div>
+
+
+        <div class="stats-grid reveal">
+
+          <div class="stat-card">
+            <strong>10+</strong>
+            <span>Projects</span>
+          </div>
+
+          <div class="stat-card">
+            <strong>3+</strong>
+            <span>Years Learning</span>
+          </div>
+
+          <div class="stat-card">
+            <strong>∞</strong>
+            <span>Ideas</span>
+          </div>
+
+          <div class="stat-card">
+            <strong>24/7</strong>
+            <span>Building</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+
+      <div class="section-heading reveal">
+        <p class="section-label">MY SKILLS</p>
+        <h2>Tools I <span>build with.</span></h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">HTML</div>
+          <div class="skill-info">
+            <h3>HTML</h3>
+            <p>Structure & semantic web</p>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">CSS</div>
+          <div class="skill-info">
+            <h3>CSS</h3>
+            <p>Modern responsive UI</p>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">JS</div>
+          <div class="skill-info">
+            <h3>JavaScript</h3>
+            <p>Interactive web applications</p>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">FB</div>
+          <div class="skill-info">
+            <h3>Firebase</h3>
+            <p>Authentication & database</p>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">GH</div>
+          <div class="skill-info">
+            <h3>GitHub</h3>
+            <p>Version control & hosting</p>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">WP</div>
+          <div class="skill-info">
+            <h3>WordPress</h3>
+            <p>Websites & content platforms</p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+
+      <div class="section-heading reveal">
+        <p class="section-label">FEATURED PROJECTS</p>
+        <h2>Things I've <span>built.</span></h2>
+        <p>
+          A few of my digital projects and experiments.
+        </p>
+      </div>
+
+
+      <div class="projects-grid">
+
+
+        <!-- BDBZ -->
+        <article class="project-card reveal">
+
+          <div class="project-number">01</div>
+
+          <div class="project-icon">
+            📚
+          </div>
+
+          <div class="project-content">
+
+            <p class="project-type">EDUCATION PLATFORM</p>
+
+            <h3>Bangladesh Book Zone</h3>
+
+            <p>
+              An educational ebook platform focused on providing
+              useful academic resources and digital learning tools.
+            </p>
+
+            <div class="project-tags">
+              <span>WordPress</span>
+              <span>HTML</span>
+              <span>CSS</span>
+            </div>
+
+            <a
+              href="https://bdbookzone.xo.je/"
+              target="_blank"
+              rel="noopener"
+              class="project-link"
+            >
+              Visit Project <span>↗</span>
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- GaanX -->
+        <article class="project-card reveal">
+
+          <div class="project-number">02</div>
+
+          <div class="project-icon">
+            🎵
+          </div>
+
+          <div class="project-content">
+
+            <p class="project-type">MUSIC PLATFORM</p>
+
+            <h3>GaanX</h3>
+
+            <p>
+              A music-focused web project for exploring and managing
+              digital audio content with a modern interface.
+            </p>
+
+            <div class="project-tags">
+              <span>Firebase</span>
+              <span>JavaScript</span>
+              <span>HTML</span>
+            </div>
+
+            <a
+              href="https://alpha-hr-bd.github.io/GaanX/"
+              target="_blank"
+              rel="noopener"
+              class="project-link"
+            >
+              Visit Project <span>↗</span>
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- AHR HOME RENT -->
+        <article class="project-card reveal">
+
+          <div class="project-number">03</div>
+
+          <div class="project-icon">
+            🏠
+          </div>
+
+          <div class="project-content">
+
+            <p class="project-type">MANAGEMENT SYSTEM</p>
+
+            <h3>AHR Home Rent System</h3>
+
+            <p>
+              A digital home rent management system designed to
+              organize tenants, rent records, payments and reports.
+            </p>
+
+            <div class="project-tags">
+              <span>JavaScript</span>
+              <span>PDF Reports</span>
+              <span>Web App</span>
+            </div>
+
+            <a
+              href="https://alpha-hr-bd.github.io/home-rent-xyz/"
+              target="_blank"
+              rel="noopener"
+              class="project-link"
+            >
+              Visit Project <span>↗</span>
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+    <section class="section">
+
+      <div class="section-heading reveal">
+        <p class="section-label">WHAT I BUILD</p>
+        <h2>From idea to <span>product.</span></h2>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card reveal">
+          <div class="service-icon">🌐</div>
+          <h3>Websites</h3>
+          <p>
+            Modern, responsive and clean websites for brands,
+            projects and personal portfolios.
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">⚡</div>
+          <h3>Web Apps</h3>
+          <p>
+            Useful browser-based applications with interactive
+            features and practical workflows.
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">🚀</div>
+          <h3>Digital Products</h3>
+          <p>
+            Turning ideas into useful digital tools and products
+            that people can actually use.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+
+      <div class="contact-box reveal">
 
         <div>
-            <h3>Building ideas into reality.</h3>
 
-            <p>
-                I'm Alpha.HR, a young developer and creator
-                interested in web development, software,
-                technology and digital products.
-            </p>
+          <p class="section-label">GET IN TOUCH</p>
 
-            <p>
-                I enjoy turning ideas into simple,
-                useful and beautiful digital experiences.
-            </p>
-        </div>
-
-        <div class="about-stats">
-
-            <div class="stat">
-                <strong>10+</strong>
-                <span>Projects</span>
-            </div>
-
-            <div class="stat">
-                <strong>3+</strong>
-                <span>Years Learning</span>
-            </div>
-
-            <div class="stat">
-                <strong>24/7</strong>
-                <span>Ideas</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section id="skills" class="section">
-
-    <div class="section-heading">
-        <span>02</span>
-        <h2>Skills</h2>
-    </div>
-
-    <div class="skills-grid">
-
-        <div class="skill-card">
-            <span>HTML</span>
-            <div class="progress">
-                <i style="width:90%"></i>
-            </div>
-        </div>
-
-        <div class="skill-card">
-            <span>CSS</span>
-            <div class="progress">
-                <i style="width:85%"></i>
-            </div>
-        </div>
-
-        <div class="skill-card">
-            <span>JavaScript</span>
-            <div class="progress">
-                <i style="width:75%"></i>
-            </div>
-        </div>
-
-        <div class="skill-card">
-            <span>Firebase</span>
-            <div class="progress">
-                <i style="width:70%"></i>
-            </div>
-        </div>
-
-        <div class="skill-card">
-            <span>GitHub</span>
-            <div class="progress">
-                <i style="width:85%"></i>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-
-<section id="projects" class="section">
-
-    <div class="section-heading">
-        <span>03</span>
-        <h2>Featured Projects</h2>
-    </div>
-
-    <div class="projects-grid">
-
-        <article class="project-card">
-
-            <div class="project-image">
-                <span>BDBZ</span>
-            </div>
-
-            <div class="project-content">
-                <small>Education Platform</small>
-
-                <h3>Bangladesh Book Zone</h3>
-
-                <p>
-                    An educational platform designed
-                    for Bangladeshi students.
-                </p>
-
-                <div class="tags">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JS</span>
-                </div>
-
-                <a href="#">
-                    View Project →
-                </a>
-            </div>
-
-        </article>
-
-
-        <article class="project-card">
-
-            <div class="project-image">
-                <span>GaanX</span>
-            </div>
-
-            <div class="project-content">
-
-                <small>Music Platform</small>
-
-                <h3>GaanX</h3>
-
-                <p>
-                    A modern music-focused web project.
-                </p>
-
-                <div class="tags">
-                    <span>Firebase</span>
-                    <span>JavaScript</span>
-                </div>
-
-                <a href="#">
-                    View Project →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <article class="project-card">
-
-            <div class="project-image">
-                <span>AHR</span>
-            </div>
-
-            <div class="project-content">
-
-                <small>Web Application</small>
-
-                <h3>AHR Home Rent System</h3>
-
-                <p>
-                    A digital management system
-                    for rental properties.
-                </p>
-
-                <div class="tags">
-                    <span>HTML</span>
-                    <span>JS</span>
-                    <span>Firebase</span>
-                </div>
-
-                <a href="#">
-                    View Project →
-                </a>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<section class="section services">
-
-    <div class="section-heading">
-        <span>04</span>
-        <h2>What I Build</h2>
-    </div>
-
-    <div class="services-grid">
-
-        <div class="service">
-            <span>01</span>
-            <h3>Websites</h3>
-            <p>
-                Modern responsive websites
-                for individuals and businesses.
-            </p>
-        </div>
-
-        <div class="service">
-            <span>02</span>
-            <h3>Web Apps</h3>
-            <p>
-                Useful browser-based tools
-                and management systems.
-            </p>
-        </div>
-
-        <div class="service">
-            <span>03</span>
-            <h3>Digital Products</h3>
-            <p>
-                Turning ideas into practical
-                digital products.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<section id="contact" class="section contact">
-
-    <div class="contact-box">
-
-        <span>05 — GET IN TOUCH</span>
-
-        <h2>
+          <h2>
             Have an idea?
-            <br>
-            Let's build it.
-        </h2>
+            <span>Let's build it.</span>
+          </h2>
 
-        <p>
-            I'm always interested in new ideas,
-            projects and collaborations.
-        </p>
+          <p class="contact-description">
+            For projects, collaborations or just saying hello,
+            you can reach me through email.
+          </p>
 
-        <a href="mailto:your@email.com" class="btn primary">
-            Contact Me →
+        </div>
+
+
+        <div class="email-list">
+
+          <a href="mailto:cmdsfun@gmail.com" class="email-card">
+            <span>Gmail</span>
+            <strong>cmdsfun@gmail.com</strong>
+            <b>↗</b>
+          </a>
+
+          <a href="mailto:cmdsfun@aol.com" class="email-card">
+            <span>AOL</span>
+            <strong>cmdsfun@aol.com</strong>
+            <b>↗</b>
+          </a>
+
+          <a href="mailto:cmdsfun@hotmail.com" class="email-card">
+            <span>Hotmail</span>
+            <strong>cmdsfun@hotmail.com</strong>
+            <b>↗</b>
+          </a>
+
+          <a href="mailto:cmdsfun@yahoo.com" class="email-card">
+            <span>Yahoo</span>
+            <strong>cmdsfun@yahoo.com</strong>
+            <b>↗</b>
+          </a>
+
+          <a href="mailto:cmdsfun@outlook.com" class="email-card">
+            <span>Outlook</span>
+            <strong>cmdsfun@outlook.com</strong>
+            <b>↗</b>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <div>
+        <a href="#home" class="logo">
+          Alpha<span>.HR</span>
         </a>
 
+        <p>
+          Developer • Creator • Entrepreneur
+        </p>
+      </div>
+
+      <div class="footer-links">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+
+      </div>
+
     </div>
 
-</section>
+    <div class="footer-bottom">
 
-</main>
+      <p>
+        © <span id="year"></span> Alpha.HR. All rights reserved.
+      </p>
 
+      <p>
+        Made with ❤️ by Alpha.HR
+      </p>
 
-<footer>
-
-    <div class="footer-logo">
-        Alpha<span>.HR</span>
     </div>
 
-    <p>
-        Built with curiosity & code.
-    </p>
+  </footer>
 
-    <p>
-        © 2026 Alpha.HR
-    </p>
 
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
+</html>
